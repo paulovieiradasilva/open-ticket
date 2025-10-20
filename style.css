@@ -1,0 +1,73 @@
+/* Variáveis padrão para flutuar label */
+:root {
+    --label-scale-x: 0.65;
+    --label-scale-y: 0.65;
+    --label-translate-y: -0.9rem;
+    --label-color-active: rgba(0, 0, 0, 1);
+    --label-color-inactive: #9ca3af;
+}
+
+/* Label flutuante: quando input/select/textarea tem valor ou está focado */
+input:focus~label,
+input:not(:placeholder-shown)~label,
+textarea:focus~label,
+textarea:not(:placeholder-shown)~label,
+select:focus~label,
+select:valid~label,
+.select-wrapper.has-value label,
+.select-wrapper select:focus~label {
+    transform: translateY(var(--label-translate-y)) scale(var(--label-scale-x), var(--label-scale-y));
+    transition: all 0.3s ease-in-out;
+    color: var(--label-color-active);
+    font-size: 1.1rem;
+}
+
+/* Label padrão (posição original) quando select está vazio e sem foco */
+.select-wrapper:not(.has-value) select:not(:focus)~label {
+    transform: none;
+    color: var(--label-color-inactive);
+}
+
+.iti {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.iti__flag-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+}
+
+/* Estilos para elementos de formulário */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+textarea {
+    padding-top: 2.5rem;
+    /* espaço suficiente para o label flutuante */
+}
+
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-icon-right {
+    @apply text-skin-secondary;
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.required-item {
+    @apply after:content-['*'] after:ml-0.5 after:text-red-500;
+}
