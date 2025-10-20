@@ -2,7 +2,9 @@ const msgSucesso = document.getElementById('msg-sucesso');
 const msgErro = document.getElementById('msg-erro');
 const backdrop = document.getElementById('backdrop');
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxwlb-6NLP4vIjc2aUsN-pH-Nhh0I9yOpgS3d3uhPqJ6q4quO4SUh2PpRAJuq66PCqA/exec";
+const destinatario = "indicainstalacoes@gmail.com";
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwLBL0TaMYSTetOHZAtsD0NNvDptQU0dLjvsFWxGvltfTu6macdkKWux1SkkVS988kh/exec";
 
 
 (function validateForm() {
@@ -65,7 +67,8 @@ const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxwlb-6NLP4vIjc2aUsN
                     email: form.email.value,
                     tipo: form.tipo.value,
                     endereco: form.endereco.value,
-                    mensagem: form.mensagem.value
+                    mensagem: form.mensagem.value,
+                    destinatario: destinatario
                 })
             })
                 .then(() => {
