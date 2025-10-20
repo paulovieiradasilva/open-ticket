@@ -4,7 +4,7 @@ const backdrop = document.getElementById('backdrop');
 
 const destinatario = "indicainstalacoes@gmail.com";
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwLBL0TaMYSTetOHZAtsD0NNvDptQU0dLjvsFWxGvltfTu6macdkKWux1SkkVS988kh/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby-vmnsfTVu-kTirS7309JGIXf6rte0q719yFmcND_Sfs8jUz37uzVwx0k1JgauR5Ur/exec";
 
 
 (function validateForm() {
